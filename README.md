@@ -102,31 +102,4 @@ The system allows users to:
           ↓
  Medicine Redistribution
 ```
-*Clone the repository
-*git clone https://github.com/Shravani-Sagane/Medishare.git
-*cd unused-medicine-redistribution
-*2. Install frontend dependencies
-*cd frontend
-*npm install
-*3. Install backend dependencies
-*cd ../backend
-*npm install
-*4. Configure environment variables
-
-*Create a .env file in the backend:
-
-*DB_HOST=localhost
-*DB_USER=root
-*DB_PASSWORD=your_password
-*DB_NAME=medicine_redistribution
-
-
-*JWT_SECRET=your_secret_key
-*5. Create the database
-*6. Start the backend
-    npm run dev
-*7. Start the frontend
-cd ../frontend
-npm run dev
-
 
