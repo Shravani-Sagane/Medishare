@@ -19,14 +19,13 @@ The system allows users to:
 
   
 * Request required medicines
-<img width="1920" height="1080" alt="Screenshot 2026-04-08 002131" src="https://github.com/user-attachments/assets/b4a6cd9b-ec90-438b-885b-be3d7f829342" />
+<img width="1920" height="1080" alt="Screenshot 2026-04-08 001657" src="https://github.com/user-attachments/assets/89d070fd-907b-4ef2-854d-494c93e651f1" />
 
- 
-* Manage medicine information
+ *Administrators can manage medicine records, users, donations, and requests through a centralized dashboard.
+
   <img width="1920" height="1020" alt="Screenshot 2026-04-07 233152" src="https://github.com/user-attachments/assets/8ce84037-7a01-4624-a64e-4563aa1ea58d" />
 
 
-Administrators can manage medicine records, users, donations, and requests through a centralized dashboard.
 
 ## 🎯 Objectives
 
@@ -40,11 +39,10 @@ Administrators can manage medicine records, users, donations, and requests throu
 ## ✨ Key Features
 
 ### 👤 User Module
+* User registration and login
 
 <img width="1920" height="1020" alt="Screenshot 2026-04-07 233101" src="https://github.com/user-attachments/assets/130ed486-19d8-4ebb-8b06-035e69597b38" />
 
-
-* User registration and login
 * Secure authentication
 * User profile management
 * Upload unused medicine details
@@ -105,16 +103,40 @@ Administrators can manage medicine records, users, donations, and requests throu
  Medicine Redistribution
 ```
 
-## 🏗️ System Architecture
+1. Clone the repository
+git clone [<>](https://github.com/Shravani-Sagane/Medishare/tree/main)
+cd unused-medicine-redistribution
+2. Install frontend dependencies
+cd frontend
+npm install
+3. Install backend dependencies
+cd ../backend
+npm install
+4. Configure environment variables
 
-```text
-┌─────────────────────────────┐
-│          Frontend           │
-│       React.js + CSS        │
-└──────────────┬──────────────┘
-               │
-               │ REST API
-               ↓
-┌────────────────────
-```
+Create a .env file in the backend:
+
+PORT=5000
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=medicine_redistribution
+DB_PORT=3306
+
+JWT_SECRET=your_secret_key
+5. Create the database
+
+Import:
+
+database/schema.sql
+
+into MySQL.
+
+6. Start the backend
+npm run dev
+7. Start the frontend
+cd ../frontend
+npm run dev
+🧪 Testing
 
