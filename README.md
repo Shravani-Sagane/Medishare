@@ -102,9 +102,8 @@ The system allows users to:
           ↓
  Medicine Redistribution
 ```
-
-1. Clone the repository
-git clone https://github.com/Shravani-Sagane/Medishare.git
+*Clone the repository
+*git clone https://github.com/Shravani-Sagane/Medishare.git
 *cd unused-medicine-redistribution
 *2. Install frontend dependencies
 *cd frontend
