@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 const back =
-    'inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-teal-800 shadow-sm ring-1 ring-slate-200/90 hover:bg-teal-50/80';
+    '';
 
 export default function Expiring_soon() {
     const [rows, setRows] = useState([]);

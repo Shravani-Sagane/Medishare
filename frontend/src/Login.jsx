@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import axios from "axios";
@@ -116,7 +117,7 @@ export default function Login() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className={inputClass}
-                                    placeholder="you@example.com"
+                                    
                                 />
                                 {errors.email && (
                                     <p className="mt-1.5 text-sm text-red-600">{errors.email}</p>
@@ -138,7 +139,7 @@ export default function Login() {
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
                                         className="w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 pr-24 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/25"
-                                        placeholder="••••••••"
+                                        
                                     />
                                     <button
                                         type="button"

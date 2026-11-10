@@ -106,7 +106,7 @@ export default function SeachMedicine() {
         setBusyId(id);
         setToast('');
         try {
-            await axios.post('/requests', { medicine_id: id });
+            await axios.post('http://localhost:3000/user/requests', { medicine_id: id });
             setToast('Request sent. The admin team will follow up.');
         } catch (err) {
             setToast(

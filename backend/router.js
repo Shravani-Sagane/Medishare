@@ -14,6 +14,7 @@ function normalizeRole(role) {
 }
 
 router.post('/login', (req, res) => {
+    
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ error: 'email and password required' });
@@ -171,7 +172,7 @@ router.post('/requests', verifytoken, authorizeRole(['user', 'admin']), (req, re
     if (medicine_id == null || typeof medicine_id === 'object') {
         return res.status(400).json({ error: 'medicine_id required' });
     }
-    const query = 'INSERT INTO requests VALUES (?,?,CURDATE(),?)';
+    const query = 'INSERT INTO requests(VALUES (?,?,CURDATE(),?)';
     db.query(query, [medicine_id, user_id, 'pending'], (err) => {
         if (err) {
             console.log(err);

@@ -2,10 +2,10 @@ const mysql = require('mysql2');
 require('dotenv').config();
 
 const config = {
-    host: process.env.host,
-    database: process.env.database,
-    password: process.env.password,
-    user: process.env.user,
+    host: process.env.DB_HOST,
+    database: process.env.NAME,
+    password: process.env.DB_PASSWORD,
+    user: process.env.DB_USER,
 };
 
 let connection = null;
