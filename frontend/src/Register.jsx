@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import axios from 'axios';
+import API from './api';
 
 const field =
     'mt-1.5 w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 text-slate-900 shadow-sm transition placeholder:text-slate-400 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/25';
@@ -42,9 +42,9 @@ export default function Register() {
 
         setLoading(true);
         try {
-            const res = await axios.post(
+            const res = await API.post(
            
-            "http://localhost:3000/user/register",
+            "/user/register",
             { name:form.Name,email:form.email,password:form.password,role:form.role},
             { headers: { "Content-Type": "application/json" } }
              );

@@ -1,7 +1,6 @@
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-
+import API from './api';
 
 const input =
     'mt-1.5 w-full rounded-xl border border-slate-200/90 bg-white px-4 py-3 text-slate-900 shadow-sm transition focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/25';
@@ -22,7 +21,7 @@ export default function Request() {
         setLoading(true);
         try {
              const token=localStorage.getItem('token');
-            await axios.post('http://localhost:3000/user/medicine', {
+            await API.post('/user/medicine', {
               medname: medname.trim(),
                 quantity: Number(quantity),
                expiry_date:expiry_date}, {

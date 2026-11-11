@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+
+import API from './api';
 
 const back =
     '';
@@ -15,7 +16,7 @@ export default function Expiring_soon() {
             try {
                
             const token=localStorage.getItem('token');
-            const res=await axios.get('http://localhost:3000/user/expiring',{
+            const res=await API.get('/user/expiring',{
                 headers:{
                 Authorization: `Bearer ${token}`
                }

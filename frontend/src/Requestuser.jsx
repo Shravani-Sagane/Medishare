@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios'
+import API from './api';
 
 
 const back =
@@ -16,7 +16,7 @@ export default function Requestuser() {
         setMessage('');
         try {
             const token=localStorage.getItem('token');
-            const res=await axios.get('http://localhost:3000/user/getrequest',{
+            const res=await API.get('/user/getrequest',{
                 headers:{
                 Authorization: `Bearer ${token}`
                }

@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import axios from "axios";
+import API from './api';
 
 
 const inputClass =
@@ -35,7 +35,7 @@ export default function Login() {
         setLoading(true);
         try {
             console.log(email);
-           const res=await axios.post("http://localhost:3000/user/login",{
+           const res=await API.post("/user/login",{
             email:email,password:password},{
              headers:{"Content-Type":"application/json"}
             }

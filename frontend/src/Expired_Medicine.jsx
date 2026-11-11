@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import API from './api';
 
 
 const back =
@@ -14,7 +15,7 @@ export default function Expired_Medicine() {
         (async () => {
             try{
             const token=localStorage.getItem('token');
-            const res=await axios.get('http://localhost:3000/user/expired',{
+            const res=await API.get('/user/expired',{
                 headers:{
                 Authorization: `Bearer ${token}`
                }

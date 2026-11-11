@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from "axios"
+import API from './api';
 
 function formatDate(d) {
     if (!d) return '—';
@@ -42,7 +42,7 @@ export default function SeachMedicine() {
     const loadAll = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:3000/user/getmedicine'
+            const res = await API.get('/user/getmedicine'
             );
             setData(Array.isArray(res.data) ? res.data : []);
         } catch {
@@ -62,7 +62,7 @@ export default function SeachMedicine() {
         setLoading(true);
         try {
             const q = medicine.trim();
-            const res = await axios.get('http://localhost:3000/user/search', {
+            const res = await API.get('/user/search', {
                 params: q ? { medicine: q } : {},
             });
             setData(Array.isArray(res.data) ? res.data : []);
@@ -106,7 +106,7 @@ export default function SeachMedicine() {
         setBusyId(id);
         setToast('');
         try {
-            await axios.post('http://localhost:3000/user/requests', { medicine_id: id });
+            await API.post('/user/requests', { medicine_id: id });
             setToast('Request sent. The admin team will follow up.');
         } catch (err) {
             setToast(

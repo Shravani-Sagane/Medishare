@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios'
-
+import API from './api';
 
 const back =
     'inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-semibold text-teal-800 shadow-sm ring-1 ring-slate-200/90 hover:bg-teal-50/80';
@@ -15,7 +14,7 @@ export default function NeedValidation() {
         let cancelled = false;
         (async () => {
             try {
-                const res = await axios.put('http://localhost:3000/user/');
+                const res = await API.put('/user/');
                 if (!cancelled) setUsers(Array.isArray(res.data) ? res.data : []);
             } catch (e) {
                 if (!cancelled)
